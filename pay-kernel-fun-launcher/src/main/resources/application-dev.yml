@@ -1,0 +1,30 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/pay_kernel_fun_db?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  redis:
+    host: localhost
+    port: 6379
+    password: root
+
+# 支付宝渠道配置：全部走 yaml，不依赖数据库配置表；生产环境建议通过环境变量/配置中心覆盖敏感字段
+pay-kernel-fun:
+  alipay:
+    app-id: your-sandbox-app-id
+    private-key: your-app-private-key
+    alipay-public-key: alipay-public-key
+    sandbox: true
+    charset: UTF-8
+    format: json
+    notify-url: http://localhost/pay-api/trade/notify/ALIPAY
+    sign-type: RSA2
+    # 以下两项仅在支付宝开放平台开启了「接口内容加密」时才需要，默认留空即可
+    encrypt-type: AES
+    encrypt-key: you-encrypt-key
+  trade:
+    order-validity-seconds: 900
+    query-retry-interval-seconds: 10
+    poll-interval-millis: 5000
+    return-url: http://localhost/pay-api/trade/return
