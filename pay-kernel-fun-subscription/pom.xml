@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.paykernelfun</groupId>
+        <artifactId>pay-kernel-fun</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>pay-kernel-fun-subscription</artifactId>
+    <packaging>jar</packaging>
+    <name>pay-kernel-fun-subscription</name>
+    <description>订阅场景支付抽象（独立于一次性交易抽象），仅提供接口/模型/建表 SQL，不接入案例应用运行时</description>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.paykernelfun</groupId>
+            <artifactId>pay-kernel-fun-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+</project>
